@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .success-message {
+            color: green;
+            margin-top: 10px;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../img/logo.jpg" alt="Online Insurance Logo">
+            <h2>Online Insurance</h2>
+        </div>
+        <nav>
+            <a href="home.html">Home</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="form-container">
+            <h1>Contact Us</h1>
+            <form id="contact-form">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" placeholder="Enter your name" required><br>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter your email" required><br>
+
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" placeholder="Enter the subject" required><br>
+
+                <label for="query">Explain Your Query</label>
+                <textarea id="query" rows="4" placeholder="Type your message here" required></textarea><br>
+
+                <button type="submit" id="submit">Submit</button>
+            </form>
+            <p id="success-message" class="success-message hidden">Your query registered successfully, we will be contacting you shortly.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Online Insurance</p>
+    </footer>
+
+    <script>
+        // JavaScript to handle form submission
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting
+
+            // Display success message
+            document.getElementById('success-message').classList.remove('hidden');
+
+            // Optionally, you can reset the form after submission
+            document.getElementById('contact-form').reset();
+        });
+    </script>
+</body>
+</html>

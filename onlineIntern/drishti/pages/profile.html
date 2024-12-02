@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Online Insurance</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../img/logo.jpg" alt="Online Insurance Logo">
+            <h2>Online Insurance</h2>
+        </div>
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="planInsur.html">Premium</a>
+            <a href="AiChat.html">Chat To AI</a>
+
+            <a href="../index.html">Logout</a>
+
+</script>
+
+
+        </nav>
+    </header>
+
+    <main class="form-container">
+        <h1>Profile</h1>
+        
+        <!-- Email Verification Section -->
+        <form id="emailVerificationForm">
+            <label for="email">Verify your Email:</label>
+            <input type="email" id="email" placeholder="Enter your email" required>
+            <button type="button" onclick="sendOTP()">Send OTP</button>
+
+            <div id="otpSection" style="display: none;">
+                <label for="otp">Enter OTP:</label>
+                <input type="text" id="otp" required>
+                <button type="button" onclick="verifyOTP()">Verify OTP</button>
+            </div>
+            <p id="message"></p>
+        </form>
+
+        <!-- Profile Edit Section -->
+        <form id="profileForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name">
+
+            <label for="phone">Phone Number:</label>
+            <input type="text" id="phone">
+
+            <label for="age">Age:</label>
+            <input type="number" id="age">
+
+            <label for="photo">Profile Photo:</label>
+            <input type="file" id="photo" accept="image/*">
+            
+            <button type="submit">Save Changes</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Online Insurance</p>
+    </footer>
+
+    <script src="../js/otpVerification.js"></script>
+</body>
+</html>

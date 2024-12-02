@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-Up Page</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../img/logo.jpg" alt="Online Insurance Logo">
+            <h2>Online Insurance</h2>
+        </div>
+        <nav>
+            <!-- <a href="home.html">Home</a> -->
+            <a href="#" class="dropdown">Features</a>
+            <a href="#" class="dropdown">About Us</a>
+            <!-- <div class="dropdown">
+                <a href="#" class="dropdown-toggle">Manager</a>
+                <div class="dropdown-content">
+                    <a href="manager-dashboard.html">Dashboard</a>
+                    <a href="profile.html">Profile</a>
+                </div>
+            </div> -->
+            <!-- <div class="dropdown">
+                <a href="#" class="dropdown-toggle">Admin</a>
+                <div class="dropdown-content">
+                    <a href="admin-dashboard.html">Dashboard</a>
+                    <a href="admin-settings.html">Settings</a>
+                </div> -->
+            </div>
+            <div class="dropdown">
+                <a href="#" class="dropdown-toggle">Contact</a>
+                <!-- <div class="dropdown-content">
+                    <a href="agentAvailability.html">Agent Availability</a>
+                    <a href="appointment.html">Appointment Booking</a>
+                    <a href="Contact.html">Contact Us</a>
+                </div> -->
+            </div>
+        </nav>
+    </header>
+    
+    
+
+    <main>
+        <section class="form-container">
+            <h1>Create an account</h1>
+            <form id="signup-form" onsubmit="return validateForm()">
+                
+                <label for="name">Full Name</label>
+                <input type="text" id="name" placeholder="Enter your full name" required><br>
+
+                <label for="policy-number">Policy Number</label>
+                <input type="text" id="policy-number" placeholder="Enter your policy number" required><br>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter your email" required><br>
+
+                <label for="age">Age</label>
+                <input type="number" id="age" placeholder="Enter your age" required><br>
+
+                <label for="payment-type">Payment Type</label>
+                <select id="payment-type" required>
+                    <option value="check">Check</option>
+                    <option value="cash">Cash</option>
+                    <option value="card">Card</option>
+                </select><br>
+
+                <label for="address">Address for Contact</label>
+                <textarea id="address" rows="3" placeholder="Enter your contact address" required></textarea><br>
+
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Create a password" required><br>
+
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" id="confirm-password" placeholder="Confirm your password" required><br>
+
+                <button type="button" id="submit" onclick="location.href='../index.html'">Sign In</button>
+            </form>
+
+            <p>Already have an account? <a href="../index.html">Sign In</a></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Online Insurance</p>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

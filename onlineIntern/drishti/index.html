@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="./img/logo.jpg" alt="Online Insurance Logo">
+            <h2>Online Insurance</h2>
+        </div>
+        <nav>
+            <!-- Navigation links can be added here -->
+        </nav>
+    </header>
+    
+    <main>
+        <section class="form-container">
+            <h1>Welcome back!</h1>
+            <form id="login-form">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter your email" required><br>
+
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter your password" required><br>
+
+                <button type="submit" id="submit">Sign In</button>
+                <p id="error-message" class="error-message" style="color:red;"></p>
+            </form>
+
+            <p>Don't have an account? <a href="./pages/register.html">Sign up</a></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Online Insurance</p>
+    </footer>
+
+    <script>
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting
+
+            // Get the values from the input fields
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // Validate the credentials
+            if (email === 'drishti12@gmail.com' && password === '12345') {
+                // Redirect to home page if credentials are correct
+                window.location.href = './pages/home.html';
+            } else {
+                // Show error message if credentials are incorrect
+                document.getElementById('error-message').textContent = 'Invalid email or password. Please try again.';
+            }
+        });
+    </script>
+</body>
+</html>

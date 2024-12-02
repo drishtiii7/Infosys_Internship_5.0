@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features - Online Insurance</title>
+    <link rel="stylesheet" href="../css/feature.css">
+</head>
+<body>
+
+<div id="header">
+<div class="navbar">
+    <h1>ONLINE INSURANCE</h1>
+    <nav>
+        <ul class="nav-grid">
+            
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+           
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="admin.html">Admin</a></li>
+            <li><a href="planInsur.html">Premium</a></li>
+            <li><a href="../pages/Contact.html">Contact</a></li>
+            <li><a href="AiChat.html">Chat With AI</a></li>
+
+        </ul>
+    </nav>
+</div>  
+</div>
+<main>
+    <section class="features">
+        <h2>FEATURES</h2>
+        <div class="feature-item" onclick="showFeature('registration')">User Registration and Authentication</div>
+        <div class="feature-item" onclick="showFeature('appointment')">Appointment Scheduling</div>
+        <div class="feature-item" onclick="showFeature('agent-management')">Agent Availability Management</div>
+        <div class="feature-item" onclick="showFeature('plan-management')">Plan Management</div>
+        <div class="feature-item" onclick="showFeature('admin-dashboard')">Admin Dashboard</div>
+    </section>
+
+    <section class="feature-content" id="featureContent">
+        <!-- Content will load here when feature is clicked -->
+    </section>
+</main>
+
+<script>
+    function showFeature(feature) {
+        const featureContent = document.getElementById('featureContent');
+        let content = '';
+
+        switch (feature) {
+            case 'registration':
+                content = `
+                    <h3>User Registration and Authentication</h3>
+                    <p>This feature allows users to securely register and log in to their accounts. It includes multi-factor authentication and encryption to ensure user data privacy and security.</p>
+                `;
+                break;
+            case 'appointment':
+                content = `
+                    <h3>Appointment Scheduling</h3>
+                    <p>With appointment scheduling, users can book consultations with agents. The system manages time slots and prevents double bookings, providing a seamless experience for users.</p>
+                `;
+                break;
+            case 'agent-management':
+                content = `
+                    <h3>Agent Availability Management</h3>
+                    <p>Agents can set their availability, making it easier for clients to schedule meetings. This feature ensures efficient time management and optimized agent-client interactions.</p>
+                `;
+                break;
+            case 'plan-management':
+                content = `
+                    <h3>Plan Management</h3>
+                    <p>The plan management feature provides options for users to view, select, and customize various insurance plans according to their needs. It helps users to easily compare benefits and costs.</p>
+                `;
+                break;
+            case 'admin-dashboard':
+                content = `
+                    <h3>Admin Dashboard</h3>
+                    <p>Admins can monitor the entire system through this dashboard. It provides real-time data analytics, user management options, and reporting tools to help maintain system integrity and performance.</p>
+                `;
+                break;
+            default:
+                content = `<p>Select a feature to view its details.</p>`;
+        }
+
+        featureContent.innerHTML = content;
+    }
+</script>
+
+</body>
+</html>

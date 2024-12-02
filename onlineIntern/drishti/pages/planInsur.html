@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium</title>
+    <link rel="stylesheet" href="../css/plan.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../img/logo.jpg" alt="Online Insurance Logo">
+            <h2>Online Insurance</h2>
+        </div>
+        
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="Feature.html" class="dropdown">Features</a>
+            <a href="about.html" class="dropdown">About Us</a>
+            <a href="profile.html">Profile</a>
+            <a href="admin.html">Admin</a>
+            <a href="planInsur.html">Premium</a>
+            <a href="AiChat.html">Chat To AI</a>    
+            <a href="Contact.html">Contact Us</a>
+        </nav>
+    </header>
+
+
+    <div class="container">
+   
+
+        <!-- Customer Information Form -->
+        <form id="customer-form">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required placeholder="Enter your full name">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required placeholder="Enter your email">
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+
+            <label for="plan-type">Plan Type:</label>
+            <select id="plan-type" name="plan-type" required>
+                <option value="basic">Basic</option>
+                <option value="premium">Premium</option>
+                <option value="family">Family</option>
+            </select>
+
+            <label for="amount">Plan Amount :</label>
+            <input type="number" id="amount" name="amount" required placeholder="Enter plan amount">
+
+            <button type="submit" id="submit-btn">Submit Information</button>
+        </form>
+
+        <!-- Display Success Message -->
+        <div id="response-message" class="hidden">
+            <!-- <p>Your information has been successfully updated!</p> -->
+        </div>
+
+        <!-- Display Error Message -->
+        <div id="error-message" class="hidden">
+            <!-- <p>There was an error processing your information. Please try again.</p> -->
+        </div>
+    </div>
+
+    <script src="../js/plan.js"></script>
+</body>
+</html>
+
+
+
+</body>
+</html>

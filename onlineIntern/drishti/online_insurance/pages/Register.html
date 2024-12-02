@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Online Insurance</title>
+    <link rel="stylesheet" href="../css/Home.css">
+</head>
+<body>
+    <div id="header"></div>
+    <script>
+        document.getElementById("header").innerHTML = await fetch('Header.html').then(res => res.text());
+    </script>
+    <main>
+        <section class="register-section">
+            <h2>Register</h2>
+            <form id="registrationForm">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" required>
+                <button type="submit">Sign Up</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

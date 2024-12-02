@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Online Insurance</title>
+    <link rel="stylesheet" href="../css/Admin.css">
+</head>
+<body>
+    <div id="header"></div>
+    <script>
+        document.getElementById("header").innerHTML = await fetch('Header.html').then(res => res.text());
+    </script>
+    <main>
+        <section class="login-section">
+            <h2>Admin Login</h2>
+            <form id="loginForm">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required minlength="6">
+                <button type="submit">Login</button>
+                <p id="error" class="error-message"></p>
+            </form>
+        </section>
+    </main>
+    <script src="../js/Admin.js"></script>
+</body>
+</html>

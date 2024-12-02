@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Booking</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .hidden {
+            display: none;
+        }
+        .success-message {
+            color: green;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../img/logo.jpg" alt="Online Insurance Logo">
+            <h2>Online Insurance</h2>
+        </div>
+        <h3>Appointment Booking</h3>
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="Feature.html" class="dropdown">Features</a>
+            <a href="about.html" class="dropdown">About Us</a>
+            <a href="profile.html">Profile</a>
+            <a href="admin.html">Admin</a>
+            <a href="planInsur.html">Premium</a>
+            <a href="AiChat.html">Chat To AI</a>    
+            <a href="Contact.html">Contact Us</a>
+        </nav>
+    </header>
+
+    <main class="form-container">
+        <!-- Form for User Information and Appointment Details -->
+        <form id="appointment-form">
+            <label for="customer-name">Full Name:</label>
+            <input type="text" id="customer-name" name="customer-name" required placeholder="Enter your name">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required placeholder="Enter your email">
+
+            <label for="phone">Phone Number:</label>
+            <input type="text" id="phone" name="phone" required placeholder="Enter your phone number">
+
+            <label for="appointment-date">Appointment Date:</label>
+            <input type="datetime-local" id="appointment-date" name="appointment-date" required>
+
+            <button type="submit">Book Appointment</button>
+        </form>
+
+        <!-- Notification Status -->
+        <div id="notification-status" class="status hidden">
+            <p id="status-message" class="success-message"></p>
+        </div>
+
+        <!-- Controls for Canceling Appointment -->
+        <button id="cancel-appointment" class="hidden">Cancel Appointment</button>
+    </main>
+
+    <script src="../js/appointment.js"></script>
+    <script>
+        // JavaScript to handle form submission and appointment booking
+        let appointmentDetails = null; // To store appointment details
+
+        document.getElementById('appointment-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting
+
+            // Simulate successful appointment booking
+            const customerName = document.getElementById('customer-name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const appointmentDate = document.getElementById('appointment-date').value;
+
+            // Store appointment details
+            appointmentDetails = {
+                customerName,
+                email,
+                phone,
+                appointmentDate
+            };
+
+            // Display success message
+            document.getElementById('status-message').textContent = `Booking confirmed successfully for ${customerName} on ${appointmentDate}.`;
+            document.getElementById('notification-status').classList.remove('hidden');
+            document.getElementById('cancel-appointment').classList.remove('hidden');
+
+            // Optionally, you can reset the form after booking
+            document.getElementById('appointment-form').reset();
+        });
+
+        // Event listener for canceling the appointment
+        document.getElementById('cancel-appointment').addEventListener('click', function() {
+            if (appointmentDetails) {
+                appointmentDetails = null; // Clear appointment details
+                document.getElementById('status-message').textContent = "Your appointment has been canceled.";
+                document.getElementById('status-message').style.color = "red";
+                document.getElementById('cancel-appointment').classList
+                .add('hidden'); // Hide the cancel button after cancellation
+            }
+        });
+    </script>
+</body>
+</html>

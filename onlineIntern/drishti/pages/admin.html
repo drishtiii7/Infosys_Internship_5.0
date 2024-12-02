@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="../img/logo.jpg" alt="Online Insurance Logo">
+            <h2>Online Insurance</h2>
+        </div>
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="Feature.html" class="dropdown">Features</a>
+            <a href="about.html" class="dropdown">About Us</a>
+            <a href="profile.html">Profile</a>
+            
+            <a href="planInsur.html">Premium</a>
+            <a href="AiChat.html">Chat To AI</a>    
+            <a href="Contact.html">Contact Us</a>
+                
+            
+        </nav>
+    </header>
+
+
+    <section class="login-section">
+        <h2>Admin Login</h2>
+        <form id="loginForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required minlength="6">
+            
+            <button type="submit">Login</button>
+            <p id="error" class="error-message"></p>
+        </form>
+    </section>
+
+
+     <!-- Admin Dashboard Section -->
+     <section class="dashboard" id="dashboard" style="display: none;">
+        <h2>Admin Dashboard</h2>
+        <p>Welcome, Admin! Manage all data and users in the system from here.</p>
+
+        <div class="grid-container">
+            <div class="card" id="user-management">
+                <h3>User Management</h3>
+                <p>View, add, or remove users.</p>
+                <button>Go to User Management</button>
+            </div>
+            <div class="card" id="policy-management">
+                <h3>Policy Management</h3>
+                <p>Manage all insurance policies and details.</p>
+                <button>Go to Policy Management</button>
+            </div>
+            <div class="card" id="claims">
+                <h3>Claims</h3>
+                <p>Review and process insurance claims.</p>
+                <button>Go to Claims</button>
+            </div>
+            <div class="card" id="analytics">
+                <h3>Analytics</h3>
+                <p>View usage statistics and analytics.</p>
+                <button>Go to Analytics</button>
+            </div>
+        </div>
+    </section>
+</main>
+
+<script>
+    // Form validation and login simulation
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+        const error = document.getElementById("error");
+
+        if (username === "drishti" && password === "infosys") {
+            error.textContent = ""; // Clear error
+            document.querySelector(".login-section").style.display = "none";
+            document.getElementById("dashboard").style.display = "block";
+        } else {
+            error.textContent = "Invalid username or password. Please try again.";
+        }
+    });
+</script>
+
+</body>
+</html>
